@@ -18,11 +18,16 @@ namespace imageSampling
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow : Window
     {
+        FileManager filemanager;
         public MainWindow()
         {
             InitializeComponent();
+            textBox.Text = "Hello from code!!!";
+            filemanager = FileManager.Instance;
+            filemanager.chooseFiles();
         }
     }
 }
