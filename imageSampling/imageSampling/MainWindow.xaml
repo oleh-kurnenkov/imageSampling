@@ -5,9 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:imageSampling"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="500">
+        Title="MainWindow" Height="480" Width="640">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="322,42,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="Choose Images" HorizontalAlignment="Left" Margin="200,250,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.594,-2.222"/>
+        <Grid HorizontalAlignment="Left" Margin="0,360,0,0" Height="90" Width="640" VerticalAlignment="Top">
+            <Button x:Name="button" Content="Choose Images" HorizontalAlignment="Left" Margin="120,0,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.594,-2.222" Click="button_Click"/>
+            <Button x:Name="samplingButton" Content="Sample images" HorizontalAlignment="Right" Margin="0,0,120,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.594,-2.222" Click="samplingButton_Click"/>
+        </Grid>
+        <ListBox Name="imagesList" HorizontalContentAlignment="Left" Height="300" Width="400"  Margin="216,10,10,139">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Height" Value="100" />
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Title}" Grid.Column="1"/>
+                        <Image Grid.Column="0"
+            HorizontalAlignment="Left"
+            Height="100"
+            VerticalAlignment="Top"
+            Width="100"
+            Source="{Binding Title}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

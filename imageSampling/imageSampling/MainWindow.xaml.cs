@@ -22,12 +22,23 @@ namespace imageSampling
     public partial class MainWindow : Window
     {
         FileManager filemanager;
+        List<ImageModel> images;
         public MainWindow()
         {
             InitializeComponent();
-            textBox.Text = "Hello from code!!!";
             filemanager = FileManager.Instance;
-            filemanager.chooseFiles();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            images = filemanager.chooseFiles();
+            imagesList.ItemsSource = images;
+        }
+
+        private void samplingButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
