@@ -40,5 +40,9 @@ namespace imageSampling
 
         }
 
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }

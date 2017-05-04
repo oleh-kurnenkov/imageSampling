@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,9 +10,11 @@ namespace imageSampling
     class ImageModel
     {
         public string Title { get; set; }
+        public Image image { get; set; }
        public ImageModel(string path)
         {
             this.Title = path;
+            this.image = Image.FromFile(path);
         }
     }
 }
