@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Drawing;
+using System.Windows.Media;
 
 namespace imageSampling
 {
@@ -23,6 +25,7 @@ namespace imageSampling
     {
         FileManager filemanager;
         List<ImageModel> images;
+        ImageModel sampleImage;
         public MainWindow()
         {
             InitializeComponent();
@@ -43,6 +46,12 @@ namespace imageSampling
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
+        }
+
+        private void sampleImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            sampleImage = filemanager.chooseImage();
+            sampleImageView.Source = sampleImage.bitmapImage;
         }
     }
 }
