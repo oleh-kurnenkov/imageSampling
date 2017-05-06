@@ -44,20 +44,22 @@
             <ComboBoxItem>Faces</ComboBoxItem>
             <ComboBoxItem>Perceptual Hash</ComboBoxItem>
         </ComboBox>
-        <Grid x:Name="sizeGrid" Margin="50,123,676,200">
+        <Grid x:Name="sizeGrid" Margin="50,80,676,200">
             <Label Content="Height" Margin="10,10,0,0" Height="30" VerticalAlignment="Top" FontSize="10.667"/>
             <Label Content="Width" Margin="10,40,0,0" Height="30" VerticalAlignment="Top"/>
             <TextBox x:Name="heightTextBox" Width="200" Height="23" Margin="70,10,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="widthTextBox" Width="200" Height="23" Margin="70,40,0,0" VerticalAlignment="Top"/>
         </Grid>
-        <Grid x:Name="colorGrid" Margin="50,123,676,200" Visibility="Hidden">
-            <xctk:ColorPicker Name="ClrPcker_Background"  Width="200" Height="23" Margin="70,10,0,0" VerticalAlignment="Top"></xctk:ColorPicker>
+        <Grid x:Name="colorGrid" Margin="50,80,676,200" Visibility="Hidden">
+            <xctk:ColorPicker Name="ClrPcker_Background"  Height="23" Margin="10,10,0,0" VerticalAlignment="Top"></xctk:ColorPicker>
         </Grid>
-        <Grid x:Name="timeGrid" Margin="50,123,676,200" Visibility="Hidden">
+        <Grid x:Name="timeGrid" Margin="50,80,676,200" Visibility="Hidden">
+            <DatePicker x:Name="datePicker" Margin="10,10,0,0" VerticalAlignment="Top"/>
         </Grid>
         <Grid x:Name="facesGrid" Margin="50,123,676,200" Visibility="Hidden">
+            <Label Content="Find pictures with faces"  Margin="10,10,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
         </Grid>
-        <Grid x:Name="hashGrid" Margin="50,123,676,200" Visibility="Hidden">
+        <Grid x:Name="hashGrid" Margin="50,80,676,200" Visibility="Hidden">
             <Button x:Name="sampleImageButton" Content="Get sample image" HorizontalAlignment="Right" Margin="0,10,100,0"
                     VerticalAlignment="Top" Width="100" Click="sampleImageButton_Click" />
             <Image x:Name="sampleImageView" HorizontalAlignment="Left"

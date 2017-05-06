@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace imageSampling
 {
@@ -40,7 +41,7 @@ namespace imageSampling
             dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|All files (*.*)|*.*";
 
             Nullable<bool> result = dlg.ShowDialog();
-
+            
             List<ImageModel> images = new List<ImageModel>();
             foreach (string path in dlg.FileNames)
             {
@@ -63,6 +64,11 @@ namespace imageSampling
             {
                 return null;
             }
+        }
+        public void createFolder(string name, string path)
+        {
+            string folderPath = Path.GetDirectoryName(path) + name;
+            System.IO.Directory.CreateDirectory(folderPath);
         }
     }
 }

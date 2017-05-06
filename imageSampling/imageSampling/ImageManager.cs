@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+
 
 namespace imageSampling
 {
@@ -30,6 +32,18 @@ namespace imageSampling
 
                 return instance;
             }
+        }
+        public List<ImageModel> getImagesWithSize(List<ImageModel> images,Size imageSize)
+        {
+            List<ImageModel> filteredImages = new List<ImageModel>();
+            foreach (ImageModel image in images)
+            {
+                if (image.image.Size == imageSize)
+                {
+                    filteredImages.Add(image);
+                }
+            }
+            return filteredImages;
         }
     }
 }
