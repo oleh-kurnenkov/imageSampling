@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows;
+using System.Drawing;
 
 namespace imageSampling
 {
@@ -65,10 +67,31 @@ namespace imageSampling
                 return null;
             }
         }
-        public void createFolder(string name, string path)
+        public string createFolder(string name, string path)
         {
-            string folderPath = Path.GetDirectoryName(path) + name;
+            string folderPath = path + "\\" + name;
             System.IO.Directory.CreateDirectory(folderPath);
+            return folderPath;
+        }
+        public void addImagesToFolder(List<ImageModel> images, string folder)
+        {
+            foreach (ImageModel image in images)
+            {
+                try
+                {
+                    image.image.Save(folder + "\\" + image.Title);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+            }
+        }
+
+        public string getDirectoryPath(string path)
+        {
+            return Path.GetDirectoryName(path);
         }
     }
 }

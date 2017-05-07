@@ -25,6 +25,7 @@ namespace imageSampling
     public partial class MainWindow : Window
     {
         FileManager filemanager;
+        ImageManager imageManager;
         List<ImageModel> images;
         List<Grid> criteriaGrids;
         ImageModel sampleImage;
@@ -33,6 +34,7 @@ namespace imageSampling
         {
             InitializeComponent();
             filemanager = FileManager.Instance;
+            imageManager = ImageManager.Instance;
             selectedCreterionIndex = 0;
             criteriaGrids = new List<Grid>();
             criteriaGrids.Add(sizeGrid);
@@ -50,7 +52,27 @@ namespace imageSampling
 
         private void samplingButton_Click(object sender, RoutedEventArgs e)
         {
-
+            switch (selectedCreterionIndex)
+            {
+                case 0:
+                    var sizeForFiltering = new System.Drawing.Size(Convert.ToInt32(widthTextBox.Text), Convert.ToInt32(heightTextBox.Text));
+                    imageManager.filterImagesForSize(this.images, sizeForFiltering);
+                    break;
+                case 1:
+                    System.Windows.Media.Color color = (System.Windows.Media.Color)ColorPicker.SelectedColor;
+                    imageManager.filterImagesForColor(this.images, System.Drawing.Color.FromArgb(color.A, color.R, color.G, color.B));
+                    break;
+                case 2:
+                    DateTime time = (DateTime)datePicker.SelectedDate;
+                    imageManager.filterImagesForTime(this.images, time);
+                    break;
+                case 3:
+                    imageManager.filterImagesWithFaces(this.images);
+                    break;
+                case 4:
+                    imageManager.filterImagesForSimilarImage(this.images, sampleImage);
+                    break;
+            }
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
