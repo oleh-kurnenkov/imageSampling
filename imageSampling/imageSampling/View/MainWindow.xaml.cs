@@ -22,7 +22,7 @@ namespace imageSampling
     /// Interaction logic for MainWindow.xaml
     /// </summary>
 
-    public partial class MainWindow : Window
+    public partial class MainWindow : ImageModel, ImageModel, FileManager, Properties.Resources
     {
         FileManager filemanager;
         ImageManager imageManager;
@@ -89,14 +89,16 @@ namespace imageSampling
 
         private void showCriterionGrid(int index)
         {
-            if (criteriaGrids != null) {
+            if (criteriaGrids != null)
+            {
                 for (int i = 0; i < criteriaGrids.Count; i++)
                 {
                     Grid grid = criteriaGrids[i];
                     if (i == selectedCreterionIndex)
                     {
                         grid.Visibility = Visibility.Visible;
-                    } else
+                    }
+                    else
                     {
                         grid.Visibility = Visibility.Hidden;
                     }

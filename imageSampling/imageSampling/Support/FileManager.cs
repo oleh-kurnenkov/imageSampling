@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows;
 using System.Drawing;
+using System.Diagnostics;
 
 namespace imageSampling
 {
@@ -85,7 +86,7 @@ namespace imageSampling
                 {
                     MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-
+                Process.Start(folder);
             }
         }
 
