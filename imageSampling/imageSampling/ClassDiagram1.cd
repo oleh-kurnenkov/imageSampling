@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="imageSampling.App">
-    <Position X="9.5" Y="0.5" Width="1.5" />
+    <Position X="10.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>App.xaml.cs</FileName>
@@ -15,21 +15,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="imageSampling.FileManager">
-    <Position X="7.25" Y="0.5" Width="1.5" />
+    <Position X="8.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAAAAAABAAABAADAARAACAAAAAAA=</HashCode>
       <FileName>Support\FileManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="imageSampling.ImageManager">
-    <Position X="5.25" Y="0.5" Width="1.5" />
+    <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAABAAgBBAAgQgAACAABACABCAAAASAAAEBAAAAA=</HashCode>
       <FileName>Support\ImageManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="imageSampling.MainWindow" BaseTypeListCollapsed="true">
-    <Position X="3.25" Y="0.5" Width="1.5" />
+    <Position X="3" Y="0.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAABABAIAAAAgAAQAAAAEAABAAgAQAAAAAAAIBA=</HashCode>
       <FileName>View\MainWindow.xaml.cs</FileName>
